@@ -1,2 +1,0 @@
-# solecarft
-my web project
