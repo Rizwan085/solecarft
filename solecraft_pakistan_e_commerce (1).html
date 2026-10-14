@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoleCraft Pakistan | Modern Luxury Footwear</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Plus Jakarta Sans & Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#F1C40F',
+                            500: '#D4AF37',
+                            600: '#AA7C11',
+                        },
+                        emerald: {
+                            800: '#064E3B',
+                            900: '#022C22',
+                        },
+                        darkBg: '#0F172A',
+                        cardDark: '#1E293B'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-18px) rotate(-3deg)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.6 },
+                            '50%': { opacity: 1 },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar & glassmorphism styles */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F172A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF 20%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .badge-pulse {
+            animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-gold-500 selection:text-slate-900 min-h-screen flex flex-col justify-between">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-emerald-900 via-slate-900 to-emerald-900 text-xs text-center py-2 px-4 border-b border-gold-500/20 text-slate-300 font-medium flex justify-center items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-gold-500 animate-ping"></span>
+        <span>FREE Shipping across Pakistan on all orders above PKR 5,000! Use Code <strong class="text-gold-500 font-bold">PK10</strong> for 10% Off</span>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-gold-500 text-xl p-2 focus:outline-none">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-500 to-emerald-800 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform duration-300">
+                    S
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-2xl font-bold tracking-wider gold-gradient-text leading-none">SOLECRAFT</span>
+                    <span class="text-[10px] tracking-[0.25em] text-slate-400 font-semibold uppercase">Pakistan</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#hero" class="hover:text-gold-500 transition-colors">Home</a>
+                <a href="#categories" class="hover:text-gold-500 transition-colors">Categories</a>
+                <a href="#shop" class="hover:text-gold-500 transition-colors">Shop All</a>
+                <a href="#featured" class="hover:text-gold-500 transition-colors">Trending</a>
+                <a href="#stores" class="hover:text-gold-500 transition-colors">Stores</a>
+            </nav>
+
+            <!-- Quick Search Bar -->
+            <div class="hidden md:flex items-center relative flex-1 max-w-xs mx-4">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 text-slate-400 text-sm"></i>
+                <input type="text" id="search-input" placeholder="Search shoes, sneakers, chappals..." class="w-full bg-slate-800/80 border border-slate-700/80 focus:border-gold-500 text-xs rounded-full py-2.5 pl-9 pr-4 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-gold-500 transition-all">
+            </div>
+
+            <!-- Action Buttons: Wishlist & Cart -->
+            <div class="flex items-center gap-3 sm:gap-4">
+                <button id="wishlist-btn" class="relative p-2 text-slate-300 hover:text-gold-500 transition-colors rounded-full hover:bg-slate-800/50">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                    <span id="wishlist-badge" class="absolute -top-1 -right-1 bg-emerald-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+
+                <button id="cart-drawer-toggle" class="relative bg-gradient-to-r from-gold-500 to-amber-600 text-slate-950 font-bold px-4 py-2.5 rounded-full flex items-center gap-2 hover:shadow-lg hover:shadow-gold-500/20 active:scale-95 transition-all text-xs sm:text-sm">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="hidden sm:inline">Cart</span>
+                    <span id="cart-badge" class="bg-slate-950 text-gold-500 text-xs font-black px-2 py-0.5 rounded-full min-w-[20px] text-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden transition-opacity duration-300">
+        <div class="w-4/5 max-w-sm bg-slate-900 h-full p-6 flex flex-col justify-between shadow-2xl border-r border-slate-800">
+            <div>
+                <div class="flex items-center justify-between mb-8">
+                    <span class="font-serif text-xl font-bold gold-gradient-text">SOLECRAFT</span>
+                    <button id="close-mobile-menu" class="text-slate-400 hover:text-white text-xl">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="mb-6">
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400 text-sm"></i>
+                        <input type="text" id="mobile-search-input" placeholder="Search product..." class="w-full bg-slate-800 border border-slate-700 text-xs rounded-lg py-2.5 pl-9 pr-3 text-white placeholder-slate-400">
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-4 text-slate-300 text-sm font-medium">
+                    <a href="#hero" class="mobile-nav-link hover:text-gold-500 py-2 border-b border-slate-800">Home</a>
+                    <a href="#categories" class="mobile-nav-link hover:text-gold-500 py-2 border-b border-slate-800">Categories</a>
+                    <a href="#shop" class="mobile-nav-link hover:text-gold-500 py-2 border-b border-slate-800">Shop Collection</a>
+                    <a href="#featured" class="mobile-nav-link hover:text-gold-500 py-2 border-b border-slate-800">Trending Items</a>
+                    <a href="#stores" class="mobile-nav-link hover:text-gold-500 py-2 border-b border-slate-800">Store Locations</a>
+                </nav>
+            </div>
+            <div class="text-xs text-slate-500 space-y-2">
+                <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold-500"></i> +92 (021) 111-765-327</p>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-gold-500"></i> support@solecraft.pk</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative overflow-hidden py-12 lg:py-20 bg-gradient-to-b from-slate-900 via-slate-900/90 to-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-wide">
+                        <i class="fa-solid fa-crown text-xs"></i> Pakistan's Premier Luxury Shoe Brand
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight font-serif">
+                        Walk with Heritage. <br>
+                        <span class="gold-gradient-text">Crafted for Distinction.</span>
+                    </h1>
+                    <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Experience handcrafted leather formals, high-performance urban sneakers, and authentic Peshawari Chappals designed specifically for modern elegance across Pakistan.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#shop" class="bg-gradient-to-r from-gold-500 to-amber-600 text-slate-950 font-bold px-7 py-3.5 rounded-full shadow-lg shadow-gold-500/25 hover:shadow-gold-500/40 hover:scale-105 active:scale-95 transition-all text-sm flex items-center gap-2">
+                            Explore Collection <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#featured" class="glass-panel text-slate-200 hover:text-gold-500 px-6 py-3.5 rounded-full font-semibold text-sm hover:border-gold-500/50 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-fire text-gold-500"></i> New Arrivals
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-800 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl font-bold text-white">100%</p>
+                            <p class="text-xs text-slate-400">Genuine Leather</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">50k+</p>
+                            <p class="text-xs text-slate-400">Pakistani Customers</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">4.9★</p>
+                            <p class="text-xs text-slate-400">Verified Reviews</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Floating Shoe Showcase -->
+                <div class="lg:col-span-5 relative flex justify-center items-center">
+                    <div class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-gold-500/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
+                    <div class="relative group">
+                        <img id="hero-floating-img" src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=800&auto=format&fit=crop" alt="SoleCraft Luxury Shoe Showcase" class="w-full max-w-md object-contain drop-shadow-[0_20px_30px_rgba(212,175,55,0.25)] animate-float transition-all duration-500">
+                        
+                        <!-- Floating Tag 1 -->
+                        <div class="absolute -top-2 -left-4 glass-panel px-4 py-2 rounded-2xl flex items-center gap-3 shadow-xl animate-bounce" style="animation-duration: 3s;">
+                            <div class="w-8 h-8 rounded-full bg-emerald-800/80 flex items-center justify-center text-gold-400 text-xs">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-wider font-bold">Craftsmanship</p>
+                                <p class="text-xs font-semibold text-white">Hand-stitched Leather</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Tag 2 -->
+                        <div class="absolute -bottom-4 -right-2 glass-panel px-4 py-2 rounded-2xl flex items-center gap-3 shadow-xl">
+                            <div class="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center text-gold-400 text-xs">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase font-bold">Free Shipping</p>
+                                <p class="text-xs font-semibold text-white">All Major Cities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES QUICK NAVIGATION -->
+    <section id="categories" class="py-12 bg-slate-950/60 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-white font-serif">Popular Shoe Categories</h2>
+                    <p class="text-xs text-slate-400 mt-1">Explore tailored footwear crafted for every occasion</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" id="category-cards-container">
+                <!-- Javascript will inject categories here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOP CATALOG & FILTERS SECTION -->
+    <section id="shop" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+            <div>
+                <span class="text-gold-500 text-xs font-bold uppercase tracking-widest">Our Store Collection</span>
+                <h2 class="text-3xl font-extrabold text-white font-serif mt-1">Explore Distinct Footwear</h2>
+            </div>
+
+            <!-- Sort and View Controls -->
+            <div class="flex flex-wrap items-center gap-3">
+                <div class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-xl border border-slate-700/80 text-xs text-slate-300">
+                    <i class="fa-solid fa-arrow-down-wide-short text-gold-500"></i>
+                    <label for="sort-select" class="sr-only">Sort By</label>
+                    <select id="sort-select" class="bg-transparent border-none text-slate-200 focus:outline-none text-xs cursor-pointer">
+                        <option value="featured" class="bg-slate-900">Featured Items</option>
+                        <option value="low-high" class="bg-slate-900">Price: Low to High</option>
+                        <option value="high-low" class="bg-slate-900">Price: High to Low</option>
+                        <option value="rating" class="bg-slate-900">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <!-- LEFT FILTER PANEL -->
+            <aside class="lg:col-span-1 space-y-6 glass-panel p-5 rounded-2xl h-fit border border-slate-800 sticky top-24">
+                <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                    <h3 class="font-bold text-white text-sm uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-gold-500"></i> Filter Collection
+                    </h3>
+                    <button id="reset-filters-btn" class="text-[11px] text-gold-500 hover:underline">Reset All</button>
+                </div>
+
+                <!-- Category Filters -->
+                <div>
+                    <label class="text-xs font-semibold text-slate-300 block mb-3">Categories</label>
+                    <div class="space-y-2 text-xs" id="category-filter-list">
+                        <!-- Dynamic Checkboxes -->
+                    </div>
+                </div>
+
+                <!-- Price Range Filter -->
+                <div>
+                    <div class="flex justify-between items-center text-xs mb-2">
+                        <span class="font-semibold text-slate-300">Max Price (PKR)</span>
+                        <span id="price-val" class="font-bold text-gold-500">PKR 25,000</span>
+                    </div>
+                    <input type="range" id="price-range" min="2500" max="25000" step="500" value="25000" class="w-full accent-gold-500 cursor-pointer bg-slate-800">
+                    <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                        <span>PKR 2,500</span>
+                        <span>PKR 25,000</span>
+                    </div>
+                </div>
+
+                <!-- Gender/Type Radio -->
+                <div>
+                    <label class="text-xs font-semibold text-slate-300 block mb-3">Collection Target</label>
+                    <div class="space-y-2 text-xs">
+                        <label class="flex items-center gap-2 text-slate-400 hover:text-white cursor-pointer">
+                            <input type="radio" name="gender" value="all" checked class="accent-gold-500"> All Shoes
+                        </label>
+                        <label class="flex items-center gap-2 text-slate-400 hover:text-white cursor-pointer">
+                            <input type="radio" name="gender" value="Men" class="accent-gold-500"> Men's Collection
+                        </label>
+                        <label class="flex items-center gap-2 text-slate-400 hover:text-white cursor-pointer">
+                            <input type="radio" name="gender" value="Women" class="accent-gold-500"> Women's Collection
+                        </label>
+                    </div>
+                </div>
+
+                <!-- In Stock Checkbox -->
+                <div class="pt-2 border-t border-slate-800">
+                    <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+                        <input type="checkbox" id="in-stock-only" class="rounded accent-gold-500">
+                        <span>In Stock Only</span>
+                    </label>
+                </div>
+            </aside>
+
+            <!-- RIGHT PRODUCTS GRID -->
+            <main class="lg:col-span-3">
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Javascript rendered products here -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="no-products-view" class="hidden text-center py-16 glass-panel rounded-2xl">
+                    <i class="fa-solid fa-shoe-prints text-4xl text-slate-600 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">No Shoes Found</h3>
+                    <p class="text-xs text-slate-400 mt-1">Try adjusting your category or price filters to see more footwear.</p>
+                </div>
+            </main>
+
+        </div>
+    </section>
+
+    <!-- TRENDING & REVIEWS SECTION -->
+    <section id="featured" class="py-16 bg-slate-900/60 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-gold-500 text-xs font-bold uppercase tracking-widest">Customer Satisfaction</span>
+                <h2 class="text-3xl font-serif font-bold text-white mt-1">What Our Customers Say</h2>
+                <p class="text-xs text-slate-400 mt-2">Verified orders delivered across Karachi, Lahore, Islamabad & Nationwide</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="glass-panel p-6 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-1 text-gold-500 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">"The Oxford Peshawari Leather Chappal exceeded my expectations! The leather quality is premium and delivery to Lahore took just 2 days. Fits perfectly."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-r from-gold-500 to-amber-600 text-slate-950 font-bold flex items-center justify-center text-xs">
+                            ZA
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-white">Zain Ahmed</p>
+                            <p class="text-[10px] text-emerald-400 flex items-center gap-1"><i class="fa-solid fa-circle-check"></i> Verified Buyer (Lahore)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-panel p-6 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-1 text-gold-500 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">"Ordered the Apex Stealth Sneakers in Karachi. Highly comfortable sole for daily office wear and workouts. Modern styling at a very reasonable PKR price."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-r from-emerald-600 to-teal-700 text-white font-bold flex items-center justify-center text-xs">
+                            SK
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-white">Shahmir Khan</p>
+                            <p class="text-[10px] text-emerald-400 flex items-center gap-1"><i class="fa-solid fa-circle-check"></i> Verified Buyer (Karachi)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-panel p-6 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-1 text-gold-500 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">"Beautiful packaging and quick COD payment process. The Velvet Starlight Heels look stunning in real life. Will definitely order again!"</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold flex items-center justify-center text-xs">
+                            AM
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-white">Ayesha Malik</p>
+                            <p class="text-[10px] text-emerald-400 flex items-center gap-1"><i class="fa-solid fa-circle-check"></i> Verified Buyer (Islamabad)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORE LOCATIONS IN PAKISTAN -->
+    <section id="stores" class="py-12 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <span class="text-gold-500 text-xs font-bold uppercase tracking-widest">Flagship Outlets</span>
+                <h2 class="text-2xl font-serif font-bold text-white mt-1">Visit SoleCraft Stores Near You</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                    <p class="font-bold text-white text-sm mb-1 text-gold-500"><i class="fa-solid fa-location-dot"></i> Lahore Outlet</p>
+                    <p class="text-slate-400">MM Alam Road, Gulberg III, Lahore</p>
+                    <p class="text-slate-500 text-[11px] mt-2"><i class="fa-solid fa-clock"></i> 11:00 AM - 10:00 PM</p>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                    <p class="font-bold text-white text-sm mb-1 text-gold-500"><i class="fa-solid fa-location-dot"></i> Karachi Outlet</p>
+                    <p class="text-slate-400">Dolmen Mall, Clifton Block 4, Karachi</p>
+                    <p class="text-slate-500 text-[11px] mt-2"><i class="fa-solid fa-clock"></i> 11:00 AM - 11:00 PM</p>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                    <p class="font-bold text-white text-sm mb-1 text-gold-500"><i class="fa-solid fa-location-dot"></i> Islamabad Outlet</p>
+                    <p class="text-slate-400">Centaurus Mall, F-8, Islamabad</p>
+                    <p class="text-slate-500 text-[11px] mt-2"><i class="fa-solid fa-clock"></i> 11:00 AM - 10:00 PM</p>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                    <p class="font-bold text-white text-sm mb-1 text-gold-500"><i class="fa-solid fa-location-dot"></i> Faisalabad Outlet</p>
+                    <p class="text-slate-400">Boulevard Mall, East Canal Road, Faisalabad</p>
+                    <p class="text-slate-500 text-[11px] mt-2"><i class="fa-solid fa-clock"></i> 12:00 PM - 10:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOPPING CART SIDEBAR DRAWER -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <!-- Backdrop -->
+        <div id="cart-backdrop" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity"></div>
+
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-slate-900 border-l border-slate-800 shadow-2xl flex flex-col justify-between">
+                
+                <!-- Drawer Header -->
+                <div class="p-5 border-b border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-gold-500 text-lg"></i>
+                        <h3 class="font-bold text-white text-base font-serif">Your Shopping Cart</h3>
+                        <span id="drawer-item-count" class="text-xs bg-slate-800 text-gold-500 px-2 py-0.5 rounded-full font-bold">0</span>
+                    </div>
+                    <button id="close-cart-btn" class="text-slate-400 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Drawer Cart Items -->
+                <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-4">
+                    <!-- Javascript dynamically injected cart items -->
+                </div>
+
+                <!-- Drawer Footer & Checkout Calculation -->
+                <div class="p-5 border-t border-slate-800 bg-slate-950/80 space-y-3 text-xs">
+                    
+                    <!-- Promo Code Input -->
+                    <div class="flex gap-2">
+                        <input type="text" id="promo-code-input" placeholder="Promo code (Try PK10)" class="bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white uppercase w-full focus:outline-none focus:border-gold-500">
+                        <button id="apply-promo-btn" class="bg-slate-800 hover:bg-slate-700 text-gold-500 font-bold px-4 py-2 rounded-lg border border-slate-700 transition-colors">Apply</button>
+                    </div>
+                    <p id="promo-msg" class="text-[11px] hidden"></p>
+
+                    <!-- Calculations -->
+                    <div class="space-y-1.5 text-slate-400 pt-2 border-t border-slate-800/80">
+                        <div class="flex justify-between">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal" class="text-white font-medium">PKR 0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Delivery Fee</span>
+                            <span id="cart-shipping" class="text-white font-medium">PKR 0</span>
+                        </div>
+                        <div id="discount-row" class="flex justify-between text-emerald-400 hidden">
+                            <span>Promo Discount (10%)</span>
+                            <span id="cart-discount">- PKR 0</span>
+                        </div>
+                        <div class="flex justify-between text-sm font-bold text-white pt-2 border-t border-slate-800">
+                            <span>Grand Total</span>
+                            <span id="cart-total" class="text-gold-500 font-extrabold text-base">PKR 0</span>
+                        </div>
+                    </div>
+
+                    <button id="proceed-checkout-btn" class="w-full bg-gradient-to-r from-gold-500 to-amber-600 text-slate-950 font-extrabold py-3 rounded-xl shadow-lg hover:shadow-gold-500/20 active:scale-98 transition-all text-sm uppercase tracking-wider flex items-center justify-center gap-2">
+                        Proceed To Checkout <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- QUICK VIEW / PRODUCT DETAILS MODAL -->
+    <div id="quickview-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col md:flex-row">
+            
+            <button id="close-quickview" class="absolute top-4 right-4 z-10 text-slate-400 hover:text-white bg-slate-800/80 w-8 h-8 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Product Image Showcase -->
+            <div class="md:w-1/2 bg-slate-950 p-6 flex flex-col items-center justify-center relative">
+                <img id="qv-image" src="" alt="Shoe Preview" class="w-full h-64 object-contain drop-shadow-xl transition-all">
+                <span id="qv-badge" class="absolute top-4 left-4 bg-gold-500/20 text-gold-400 text-[10px] font-bold px-2.5 py-1 rounded-full border border-gold-500/30">
+                    Handcrafted
+                </span>
+            </div>
+
+            <!-- Product Info & Actions -->
+            <div class="md:w-1/2 p-6 flex flex-col justify-between space-y-4 overflow-y-auto">
+                <div>
+                    <p id="qv-category" class="text-gold-500 text-xs font-bold uppercase tracking-wider">Category</p>
+                    <h3 id="qv-title" class="text-xl font-bold text-white font-serif mt-1">Shoe Name</h3>
+                    
+                    <div class="flex items-center gap-2 mt-2">
+                        <div id="qv-stars" class="flex text-gold-500 text-xs"></div>
+                        <span id="qv-rating-num" class="text-xs text-slate-400 font-medium">4.8 (24 reviews)</span>
+                    </div>
+
+                    <p id="qv-price" class="text-2xl font-black text-white mt-3 font-serif">PKR 0</p>
+                    <p id="qv-desc" class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        Detailed shoe description detailing genuine leather quality, comfortable cushioning, and durable sole.
+                    </p>
+                </div>
+
+                <!-- Size Picker -->
+                <div>
+                    <label class="text-xs font-bold text-slate-200 block mb-2">Select Size (EU / Pakistan standard):</label>
+                    <div class="flex flex-wrap gap-2" id="qv-size-options">
+                        <!-- Javascript rendered sizes -->
+                    </div>
+                </div>
+
+                <!-- Color Options -->
+                <div>
+                    <label class="text-xs font-bold text-slate-200 block mb-2">Color Variant:</label>
+                    <div class="flex gap-2" id="qv-color-options">
+                        <!-- Javascript rendered colors -->
+                    </div>
+                </div>
+
+                <!-- Quantity & Add to Cart -->
+                <div class="pt-4 border-t border-slate-800 flex items-center gap-3">
+                    <div class="flex items-center border border-slate-700 rounded-lg bg-slate-800">
+                        <button id="qv-qty-minus" class="px-3 py-1.5 text-slate-300 hover:text-white">-</button>
+                        <span id="qv-qty-val" class="px-3 text-xs font-bold text-white">1</span>
+                        <button id="qv-qty-plus" class="px-3 py-1.5 text-slate-300 hover:text-white">+</button>
+                    </div>
+
+                    <button id="qv-add-cart-btn" class="flex-1 bg-gradient-to-r from-gold-500 to-amber-600 text-slate-950 font-bold py-2.5 rounded-lg text-xs hover:shadow-lg hover:shadow-gold-500/20 active:scale-95 transition-all">
+                        <i class="fa-solid fa-cart-plus mr-1"></i> Add To Cart
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md hidden overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full my-8 p-6 shadow-2xl space-y-6">
+            
+            <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+                <div>
+                    <h3 class="text-lg font-bold text-white font-serif flex items-center gap-2">
+                        <i class="fa-solid fa-truck-ramp-box text-gold-500"></i> Delivery & Shipping Details
+                    </h3>
+                    <p class="text-xs text-slate-400">Complete your details for fast courier delivery across Pakistan</p>
+                </div>
+                <button id="close-checkout" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+
+            <form id="checkout-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Full Name *</label>
+                        <input type="text" required placeholder="e.g. Muhammad Ali" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-gold-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Phone Number (+92) *</label>
+                        <input type="tel" required placeholder="0300 1234567" pattern="^((\+92)|(0092)|(03))[0-9]{9}$" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-gold-500 focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Email Address</label>
+                        <input type="email" placeholder="ali@example.com" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-gold-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">City *</label>
+                        <select required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-gold-500 focus:outline-none">
+                            <option value="">Select City</option>
+                            <option value="Karachi">Karachi</option>
+                            <option value="Lahore">Lahore</option>
+                            <option value="Islamabad">Islamabad</option>
+                            <option value="Rawalpindi">Rawalpindi</option>
+                            <option value="Faisalabad">Faisalabad</option>
+                            <option value="Peshawar">Peshawar</option>
+                            <option value="Multan">Multan</option>
+                            <option value="Quetta">Quetta</option>
+                            <option value="Sialkot">Sialkot</option>
+                            <option value="Gujranwala">Gujranwala</option>
+                            <option value="Other">Other City</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Complete Delivery Address *</label>
+                    <textarea required rows="2" placeholder="House #, Street name, Sector/Area..." class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-gold-500 focus:outline-none"></textarea>
+                </div>
+
+                <!-- Payment Methods -->
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-2">Select Payment Option *</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                        <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-700 bg-slate-800/80 cursor-pointer hover:border-gold-500">
+                            <input type="radio" name="payment" value="cod" checked class="accent-gold-500">
+                            <span>Cash on Delivery</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-700 bg-slate-800/80 cursor-pointer hover:border-gold-500">
+                            <input type="radio" name="payment" value="jazzcash" class="accent-gold-500">
+                            <span>JazzCash</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-700 bg-slate-800/80 cursor-pointer hover:border-gold-500">
+                            <input type="radio" name="payment" value="easypaisa" class="accent-gold-500">
+                            <span>EasyPaisa</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-700 bg-slate-800/80 cursor-pointer hover:border-gold-500">
+                            <input type="radio" name="payment" value="card" class="accent-gold-500">
+                            <span>Card</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-slate-800 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs text-slate-400 block">Total Payable</span>
+                        <span id="checkout-payable" class="text-lg font-bold text-gold-500">PKR 0</span>
+                    </div>
+                    <button type="submit" class="bg-gradient-to-r from-gold-500 to-amber-600 text-slate-950 font-bold px-6 py-3 rounded-xl text-xs hover:shadow-lg hover:shadow-gold-500/20 active:scale-95 transition-all uppercase tracking-wider">
+                        Confirm & Place Order
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ORDER CONFIRMATION MODAL / RECEIPT -->
+    <div id="confirmation-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 text-center shadow-2xl space-y-4">
+            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-2xl mx-auto border border-emerald-500/30">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white font-serif">Order Placed Successfully!</h3>
+            <p class="text-xs text-slate-300">Thank you for shopping with SoleCraft Pakistan. Your order is being processed.</p>
+            
+            <div class="bg-slate-950 p-4 rounded-xl text-left text-xs space-y-2 border border-slate-800">
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Order Reference:</span>
+                    <span id="receipt-order-id" class="font-bold text-gold-500">#SCP-89321</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Payment Status:</span>
+                    <span id="receipt-payment" class="text-emerald-400 font-semibold">Cash on Delivery</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Estimated Delivery:</span>
+                    <span class="text-white">2 - 4 Working Days</span>
+                </div>
+                <div class="flex justify-between pt-2 border-t border-slate-800">
+                    <span class="text-slate-300 font-bold">Total Amount:</span>
+                    <span id="receipt-total" class="font-extrabold text-gold-500">PKR 0</span>
+                </div>
+            </div>
+
+            <div class="flex gap-3 pt-2">
+                <button onclick="window.print()" class="flex-1 glass-panel text-slate-300 hover:text-white py-2.5 rounded-xl text-xs font-semibold">
+                    <i class="fa-solid fa-print mr-1"></i> Print Receipt
+                </button>
+                <button id="close-confirmation" class="flex-1 bg-gold-500 text-slate-950 font-bold py-2.5 rounded-xl text-xs hover:bg-gold-400">
+                    Continue Shopping
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION STACK -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-12 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="space-y-3">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-gold-500 flex items-center justify-center text-slate-950 font-black text-sm">S</div>
+                    <span class="font-serif text-lg font-bold text-white">SOLECRAFT</span>
+                </div>
+                <p class="text-slate-400 leading-relaxed">
+                    Crafting premium luxury shoes for fashion-conscious individuals across Pakistan. Pure leather, unmatched durability, timeless designs.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white uppercase tracking-wider mb-3">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#shop" class="hover:text-gold-500 transition-colors">Men's Formal Shoes</a></li>
+                    <li><a href="#shop" class="hover:text-gold-500 transition-colors">Peshawari Chappals</a></li>
+                    <li><a href="#shop" class="hover:text-gold-500 transition-colors">Sneakers & Athletics</a></li>
+                    <li><a href="#shop" class="hover:text-gold-500 transition-colors">Women's Heels & Loafers</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="font-bold text-white uppercase tracking-wider">Stay Updated</h4>
+                <p class="text-slate-400">Subscribe to receive exclusive Pakistan discount codes & release updates.</p>
+                <form id="newsletter-form" class="space-y-2">
+                    <input type="email" required placeholder="Enter your email address" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-gold-500">
+                    <button type="submit" class="w-full bg-gold-500 text-slate-950 font-bold py-2 rounded-lg hover:bg-gold-400 transition-colors">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-slate-900 text-center text-[11px] text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p>© 2026 SoleCraft Pakistan. All rights reserved. Prices in PKR.</p>
+            <div class="flex gap-4">
+                <span>Privacy Policy</span>
+                <span>Terms of Service</span>
+                <span>Shipping Policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- PRODUCT DATABASE (All Distinct Images & Shoes in PKR) ---
+        const PRODUCTS = [
+            {
+                id: 1,
+                name: "Royal Oxford Derby Leather",
+                category: "Formals",
+                gender: "Men",
+                pricePKR: 14999,
+                originalPricePKR: 18500,
+                rating: 4.9,
+                reviewsCount: 42,
+                image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=800&auto=format&fit=crop",
+                badge: "Best Seller",
+                inStock: true,
+                description: "Hand-burnished full-grain Italian leather derby with cushioned memory foam for ultimate comfort during formal occasions.",
+                sizes: [39, 40, 41, 42, 43, 44, 45],
+                colors: ["Classic Tan", "Raven Black"]
+            },
+            {
+                id: 2,
+                name: "Apex Stealth Runner Sneakers",
+                category: "Sneakers",
+                gender: "Men",
+                pricePKR: 8499,
+                originalPricePKR: 10500,
+                rating: 4.8,
+                reviewsCount: 38,
+                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop",
+                badge: "Trending",
+                inStock: true,
+                description: "Lightweight mesh upper with responsive air cushioning designed for streetwear fashion and daily sports.",
+                sizes: [40, 41, 42, 43, 44],
+                colors: ["Crimson Red", "Obsidian Black"]
+            },
+            {
+                id: 3,
+                name: "Kaptan Traditional Peshawari Chappal",
+                category: "Traditional",
+                gender: "Men",
+                pricePKR: 6999,
+                originalPricePKR: 8999,
+                rating: 5.0,
+                reviewsCount: 87,
+                image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=800&auto=format&fit=crop",
+                badge: "Authentic",
+                inStock: true,
+                description: "Pure handcrafted leather Peshawari chappal featuring double tire sole stitching for timeless traditional elegance.",
+                sizes: [39, 40, 41, 42, 43, 44, 45],
+                colors: ["Dark Brown", "Jet Black"]
+            },
+            {
+                id: 4,
+                name: "Monk Strap Executive Loafer",
+                category: "Formals",
+                gender: "Men",
+                pricePKR: 12999,
+                originalPricePKR: 15000,
+                rating: 4.7,
+                reviewsCount: 19,
+                image: "https://images.unsplash.com/photo-1533867617858-e7b97e060509?q=80&w=800&auto=format&fit=crop",
+                badge: "Premium",
+                inStock: true,
+                description: "Sleek double buckle leather monk strap loafers designed for sharp business professionals.",
+                sizes: [40, 41, 42, 43, 44],
+                colors: ["Mahogany", "Black"]
+            },
+            {
+                id: 5,
+                name: "Velvet Starlight Ankle Strap Heels",
+                category: "Women",
+                gender: "Women",
+                pricePKR: 9499,
+                originalPricePKR: 12000,
+                rating: 4.9,
+                reviewsCount: 51,
+                image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop",
+                badge: "Women Special",
+                inStock: true,
+                description: "Elegant suede ankle strap stiletto heels crafted for weddings, formal dinners, and party glam.",
+                sizes: [36, 37, 38, 39, 40],
+                colors: ["Midnight Blue", "Emerald Green"]
+            },
+            {
+                id: 6,
+                name: "UltraBoost Pro Athletic Trainer",
+                category: "Athletic",
+                gender: "Men",
+                pricePKR: 11200,
+                originalPricePKR: 13500,
+                rating: 4.6,
+                reviewsCount: 29,
+                image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=800&auto=format&fit=crop",
+                badge: "High Tech",
+                inStock: true,
+                description: "High performance running shoe with energy returning foam midsole and breathable knit upper.",
+                sizes: [40, 41, 42, 43, 44, 45],
+                colors: ["Neon Green", "Graphite Gray"]
+            },
+            {
+                id: 7,
+                name: "Heritage Quetta Norozi Chappal",
+                category: "Traditional",
+                gender: "Men",
+                pricePKR: 7499,
+                originalPricePKR: 9500,
+                rating: 4.9,
+                reviewsCount: 63,
+                image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?q=80&w=800&auto=format&fit=crop",
+                badge: "Popular",
+                inStock: true,
+                description: "Special broad sole Balochi/Quetta Norozi chappal made with top-tier oxhide genuine leather.",
+                sizes: [39, 40, 41, 42, 43, 44],
+                colors: ["Mustard Tan", "Deep Charcoal"]
+            },
+            {
+                id: 8,
+                name: "Urban Street Luxe High-Tops",
+                category: "Sneakers",
+                gender: "Men",
+                pricePKR: 9999,
+                originalPricePKR: 12500,
+                rating: 4.8,
+                reviewsCount: 34,
+                image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=800&auto=format&fit=crop",
+                badge: "New",
+                inStock: true,
+                description: "Retro high-top sneakers with padded collar support and durable rubber grip outsole.",
+                sizes: [39, 40, 41, 42, 43, 44],
+                colors: ["Black & White", "Retro Tan"]
+            },
+            {
+                id: 9,
+                name: "Graceful Chic Patent Leather Pumps",
+                category: "Women",
+                gender: "Women",
+                pricePKR: 7999,
+                originalPricePKR: 9999,
+                rating: 4.7,
+                reviewsCount: 22,
+                image: "https://images.unsplash.com/photo-1596568359553-a56de6970068?q=80&w=800&auto=format&fit=crop",
+                badge: "Classy",
+                inStock: true,
+                description: "Glossy finish patent leather comfortable pointed toe pumps for women corporate and evening fashion.",
+                sizes: [36, 37, 38, 39, 40],
+                colors: ["Nude Tan", "Classic Black"]
+            }
+        ];
+
+        // --- APP STATE ---
+        let cart = [];
+        let wishlist = [];
+        let activeDiscount = 0; // percentage
+        let selectedQuickViewProduct = null;
+        let selectedQuickViewSize = null;
+        let selectedQuickViewColor = null;
+        let quickViewQty = 1;
+
+        // --- DOM ELEMENTS ---
+        const productsGrid = document.getElementById('products-grid');
+        const categoryCardsContainer = document.getElementById('category-cards-container');
+        const categoryFilterList = document.getElementById('category-filter-list');
+        const priceRange = document.getElementById('price-range');
+        const priceVal = document.getElementById('price-val');
+        const sortSelect = document.getElementById('sort-select');
+        const inStockOnly = document.getElementById('in-stock-only');
+        const searchInput = document.getElementById('search-input');
+        const mobileSearchInput = document.getElementById('mobile-search-input');
+        const noProductsView = document.getElementById('no-products-view');
+
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartBadge = document.getElementById('cart-badge');
+        const drawerItemCount = document.getElementById('drawer-item-count');
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const cartShipping = document.getElementById('cart-shipping');
+        const cartDiscount = document.getElementById('cart-discount');
+        const discountRow = document.getElementById('discount-row');
+        const cartTotal = document.getElementById('cart-total');
+
+        const quickviewModal = document.getElementById('quickview-modal');
+        const checkoutModal = document.getElementById('checkout-modal');
+        const confirmationModal = document.getElementById('confirmation-modal');
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCategories();
+            renderCategoryFilters();
+            renderProducts();
+            setupEventListeners();
+        });
+
+        // --- RENDER CATEGORIES BAR ---
+        function renderCategories() {
+            const categories = [
+                { name: "Formals", icon: "fa-user-tie", img: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=300" },
+                { name: "Sneakers", icon: "fa-shoe-prints", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=300" },
+                { name: "Traditional", icon: "fa-gem", img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=300" },
+                { name: "Athletic", icon: "fa-person-running", img: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=300" },
+                { name: "Women", icon: "fa-venus", img: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=300" }
+            ];
+
+            categoryCardsContainer.innerHTML = categories.map(cat => `
+                <div onclick="filterByCategory('${cat.name}')" class="group relative rounded-xl overflow-hidden cursor-pointer h-28 border border-slate-800 hover:border-gold-500/50 transition-all shadow-md">
+                    <img src="${cat.img}" alt="${cat.name}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                    <div class="absolute bottom-2 left-3 flex items-center gap-2">
+                        <i class="fa-solid ${cat.icon} text-gold-500 text-xs"></i>
+                        <span class="font-bold text-white text-xs tracking-wider">${cat.name}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- RENDER FILTER CHECKBOXES ---
+        function renderCategoryFilters() {
+            const categories = ["Formals", "Sneakers", "Traditional", "Athletic", "Women"];
+            categoryFilterList.innerHTML = categories.map(cat => `
+                <label class="flex items-center gap-2 text-slate-400 hover:text-white cursor-pointer">
+                    <input type="checkbox" value="${cat}" class="category-checkbox rounded accent-gold-500"> ${cat}
+                </label>
+            `).join('');
+
+            // Attach listeners to filter checkboxes
+            document.querySelectorAll('.category-checkbox').forEach(cb => {
+                cb.addEventListener('change', renderProducts);
+            });
+        }
+
+        // --- RENDER PRODUCTS GRID WITH FILTERS & SORT ---
+        function renderProducts() {
+            let filtered = [...PRODUCTS];
+
+            // 1. Search Query
+            const query = (searchInput.value || mobileSearchInput.value || '').toLowerCase().trim();
+            if (query) {
+                filtered = filtered.filter(p =>
+                    p.name.toLowerCase().includes(query) ||
+                    p.category.toLowerCase().includes(query) ||
+                    p.description.toLowerCase().includes(query) ||
+                    p.gender.toLowerCase().includes(query) ||
+                    p.badge.toLowerCase().includes(query)
+                );
+            }
+
+            // 2. Selected Categories
+            const checkedCategories = Array.from(document.querySelectorAll('.category-checkbox:checked')).map(cb => cb.value);
+            if (checkedCategories.length > 0) {
+                filtered = filtered.filter(p => checkedCategories.includes(p.category));
+            }
+
+            // 3. Price Filter
+            const maxPrice = parseInt(priceRange.value);
+            filtered = filtered.filter(p => p.pricePKR <= maxPrice);
+
+            // 4. Gender Filter
+            const selectedGender = document.querySelector('input[name="gender"]:checked').value;
+            if (selectedGender !== 'all') {
+                filtered = filtered.filter(p => p.gender === selectedGender);
+            }
+
+            // 5. In Stock Only
+            if (inStockOnly.checked) {
+                filtered = filtered.filter(p => p.inStock);
+            }
+
+            // 6. Sorting
+            const sortVal = sortSelect.value;
+            if (sortVal === 'low-high') {
+                filtered.sort((a, b) => a.pricePKR - b.pricePKR);
+            } else if (sortVal === 'high-low') {
+                filtered.sort((a, b) => b.pricePKR - a.pricePKR);
+            } else if (sortVal === 'rating') {
+                filtered.sort((a, b) => b.rating - a.rating);
+            }
+
+            // Toggle Empty State
+            if (filtered.length === 0) {
+                productsGrid.innerHTML = '';
+                noProductsView.classList.remove('hidden');
+                return;
+            } else {
+                noProductsView.classList.add('hidden');
+            }
+
+            // Render Product Cards
+            productsGrid.innerHTML = filtered.map(product => {
+                const isWishlisted = wishlist.includes(product.id);
+                return `
+                <div class="glass-panel rounded-2xl overflow-hidden group hover:border-gold-500/40 transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-2xl hover:-translate-y-1">
+                    
+                    <!-- Card Top Image & Badges -->
+                    <div class="relative bg-slate-950/60 p-4 flex items-center justify-center overflow-hidden h-56">
+                        <span class="absolute top-3 left-3 bg-gold-500/20 text-gold-400 border border-gold-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                            ${product.badge}
+                        </span>
+
+                        <button onclick="toggleWishlist(${product.id})" class="absolute top-3 right-3 text-slate-400 hover:text-red-500 bg-slate-900/80 p-2 rounded-full transition-all">
+                            <i class="${isWishlisted ? 'fa-solid fa-heart text-red-500' : 'fa-regular fa-heart'} text-xs"></i>
+                        </button>
+
+                        <img src="${product.image}" alt="${product.name}" class="max-h-44 object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                    </div>
+
+                    <!-- Card Info -->
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
+                                <span class="uppercase tracking-wider font-semibold text-gold-500/90">${product.category}</span>
+                                <span class="flex items-center gap-1 text-gold-400 font-bold"><i class="fa-solid fa-star text-[10px]"></i> ${product.rating}</span>
+                            </div>
+                            <h3 class="text-sm font-bold text-white group-hover:text-gold-400 transition-colors line-clamp-1 font-serif">${product.name}</h3>
+                            <p class="text-[11px] text-slate-400 line-clamp-2 mt-1 leading-relaxed">${product.description}</p>
+                        </div>
+
+                        <div>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-base font-extrabold text-white font-serif">PKR ${product.pricePKR.toLocaleString()}</span>
+                                <span class="text-[11px] text-slate-500 line-through">PKR ${product.originalPricePKR.toLocaleString()}</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2 pt-3">
+                                <button onclick="openQuickView(${product.id})" class="glass-panel hover:bg-slate-800 text-slate-200 text-xs py-2 rounded-lg font-semibold transition-all">
+                                    Quick View
+                                </button>
+                                <button onclick="quickAddToCart(${product.id})" class="bg-gradient-to-r from-gold-500 to-amber-600 text-slate-950 font-bold text-xs py-2 rounded-lg hover:shadow-lg hover:shadow-gold-500/20 active:scale-95 transition-all">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            `}).join('');
+        }
+
+        // --- CATEGORY QUICK SELECTION ---
+        function filterByCategory(catName) {
+            document.querySelectorAll('.category-checkbox').forEach(cb => {
+                cb.checked = (cb.value === catName);
+            });
+            renderProducts();
+            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // --- QUICK VIEW MODAL LOGIC ---
+        function openQuickView(id) {
+            const product = PRODUCTS.find(p => p.id === id);
+            if (!product) return;
+
+            selectedQuickViewProduct = product;
+            selectedQuickViewSize = product.sizes[0];
+            selectedQuickViewColor = product.colors[0];
+            quickViewQty = 1;
+
+            document.getElementById('qv-image').src = product.image;
+            document.getElementById('qv-category').innerText = product.category;
+            document.getElementById('qv-title').innerText = product.name;
+            document.getElementById('qv-price').innerText = `PKR ${product.pricePKR.toLocaleString()}`;
+            document.getElementById('qv-desc').innerText = product.description;
+            document.getElementById('qv-badge').innerText = product.badge;
+            document.getElementById('qv-rating-num').innerText = `${product.rating} (${product.reviewsCount} reviews)`;
+            document.getElementById('qv-qty-val').innerText = quickViewQty;
+
+            // Render Stars
+            const starsContainer = document.getElementById('qv-stars');
+            starsContainer.innerHTML = Array.from({length: 5}, (_, i) => `<i class="fa-solid fa-star ${i < Math.floor(product.rating) ? 'text-gold-500' : 'text-slate-700'}"></i>`).join('');
+
+            // Render Sizes
+            const sizesContainer = document.getElementById('qv-size-options');
+            sizesContainer.innerHTML = product.sizes.map(sz => `
+                <button onclick="selectQvSize(${sz})" class="qv-size-btn border ${sz === selectedQuickViewSize ? 'border-gold-500 bg-gold-500/20 text-gold-400' : 'border-slate-700 bg-slate-800 text-slate-300'} px-3 py-1 rounded-lg text-xs font-bold transition-all">
+                    EU ${sz}
+                </button>
+            `).join('');
+
+            // Render Colors
+            const colorsContainer = document.getElementById('qv-color-options');
+            colorsContainer.innerHTML = product.colors.map(col => `
+                <button onclick="selectQvColor('${col}')" class="qv-color-btn border ${col === selectedQuickViewColor ? 'border-gold-500 bg-gold-500/20 text-gold-400' : 'border-slate-700 bg-slate-800 text-slate-300'} px-3 py-1 rounded-lg text-xs font-semibold transition-all">
+                    ${col}
+                </button>
+            `).join('');
+
+            quickviewModal.classList.remove('hidden');
+        }
+
+        function selectQvSize(sz) {
+            selectedQuickViewSize = sz;
+            document.querySelectorAll('.qv-size-btn').forEach(btn => {
+                const isSelected = btn.innerText.includes(sz);
+                btn.className = `qv-size-btn border ${isSelected ? 'border-gold-500 bg-gold-500/20 text-gold-400' : 'border-slate-700 bg-slate-800 text-slate-300'} px-3 py-1 rounded-lg text-xs font-bold transition-all`;
+            });
+        }
+
+        function selectQvColor(col) {
+            selectedQuickViewColor = col;
+            document.querySelectorAll('.qv-color-btn').forEach(btn => {
+                const isSelected = btn.innerText.includes(col);
+                btn.className = `qv-color-btn border ${isSelected ? 'border-gold-500 bg-gold-500/20 text-gold-400' : 'border-slate-700 bg-slate-800 text-slate-300'} px-3 py-1 rounded-lg text-xs font-semibold transition-all`;
+            });
+        }
+
+        // --- CART OPERATIONS ---
+        function quickAddToCart(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+            
+            addToCart(product, product.sizes[0], product.colors[0], 1);
+        }
+
+        function addToCart(product, size, color, qty) {
+            const existingIndex = cart.findIndex(item => item.id === product.id && item.size === size && item.color === color);
+
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += qty;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    pricePKR: product.pricePKR,
+                    image: product.image,
+                    size: size,
+                    color: color,
+                    qty: qty
+                });
+            }
+
+            updateCartUI();
+            showToast(`Added "${product.name}" to your cart!`);
+        }
+
+        function updateCartQty(index, delta) {
+            if (cart[index]) {
+                cart[index].qty += delta;
+                if (cart[index].qty <= 0) {
+                    cart.splice(index, 1);
+                }
+                updateCartUI();
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+            showToast("Item removed from cart");
+        }
+
+        function updateCartUI() {
+            // Calculate Total Items Count
+            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            cartBadge.innerText = totalCount;
+            drawerItemCount.innerText = totalCount;
+
+            // Render Cart Items
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="text-center py-12 text-slate-500 space-y-2">
+                        <i class="fa-solid fa-bag-shopping text-3xl text-slate-700"></i>
+                        <p class="text-xs">Your cart is currently empty.</p>
+                        <button onclick="toggleCartDrawer(false)" class="text-gold-500 text-xs font-bold hover:underline">Explore Products</button>
+                    </div>
+                `;
+            } else {
+                cartItemsContainer.innerHTML = cart.map((item, idx) => `
+                    <div class="flex items-center gap-3 bg-slate-800/60 p-3 rounded-xl border border-slate-700/60">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-contain bg-slate-950 p-1 rounded-lg">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="text-xs font-bold text-white truncate font-serif">${item.name}</h4>
+                            <p class="text-[10px] text-slate-400 mt-0.5">Size: EU ${item.size} | Color: ${item.color}</p>
+                            <p class="text-xs font-extrabold text-gold-500 mt-1">PKR ${(item.pricePKR * item.qty).toLocaleString()}</p>
+                        </div>
+                        <div class="flex flex-col items-end gap-2">
+                            <button onclick="removeFromCart(${idx})" class="text-slate-500 hover:text-red-400 text-xs">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                            <div class="flex items-center border border-slate-700 rounded bg-slate-900">
+                                <button onclick="updateCartQty(${idx}, -1)" class="px-2 py-0.5 text-slate-400 hover:text-white text-xs">-</button>
+                                <span class="px-2 text-xs text-white font-bold">${item.qty}</span>
+                                <button onclick="updateCartQty(${idx}, 1)" class="px-2 py-0.5 text-slate-400 hover:text-white text-xs">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Calculations
+            const subtotal = cart.reduce((sum, item) => sum + (item.pricePKR * item.qty), 0);
+            const shipping = (subtotal >= 5000 || subtotal === 0) ? 0 : 250;
+            const discountAmount = Math.round((subtotal * activeDiscount) / 100);
+            const grandTotal = Math.max(0, subtotal + shipping - discountAmount);
+
+            cartSubtotal.innerText = `PKR ${subtotal.toLocaleString()}`;
+            cartShipping.innerText = shipping === 0 ? "FREE" : `PKR ${shipping}`;
+            
+            if (activeDiscount > 0) {
+                discountRow.classList.remove('hidden');
+                cartDiscount.innerText = `- PKR ${discountAmount.toLocaleString()}`;
+            } else {
+                discountRow.classList.add('hidden');
+            }
+
+            cartTotal.innerText = `PKR ${grandTotal.toLocaleString()}`;
+            document.getElementById('checkout-payable').innerText = `PKR ${grandTotal.toLocaleString()}`;
+        }
+
+        // --- WISHLIST TOGGLE ---
+        function toggleWishlist(productId) {
+            const index = wishlist.indexOf(productId);
+            if (index > -1) {
+                wishlist.splice(index, 1);
+                showToast("Removed from Wishlist");
+            } else {
+                wishlist.push(productId);
+                showToast("Added to Wishlist!");
+            }
+            document.getElementById('wishlist-badge').innerText = wishlist.length;
+            renderProducts();
+        }
+
+        // --- TOGGLE CART DRAWER ---
+        function toggleCartDrawer(open) {
+            if (open) {
+                cartDrawer.classList.remove('hidden');
+            } else {
+                cartDrawer.classList.add('hidden');
+            }
+        }
+
+        // --- TOAST NOTIFICATION HELPERS ---
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'glass-panel bg-slate-900/95 border-gold-500/40 text-slate-100 text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 transform transition-all duration-300 translate-y-4 opacity-0 pointer-events-auto';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-gold-500"></i> <span>${message}</span>`;
+            
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // --- EVENT LISTENERS setup ---
+        function setupEventListeners() {
+            // Search Input Listeners (keep desktop and mobile search in sync)
+            searchInput.addEventListener('input', () => {
+                mobileSearchInput.value = searchInput.value;
+                renderProducts();
+            });
+            mobileSearchInput.addEventListener('input', () => {
+                searchInput.value = mobileSearchInput.value;
+                renderProducts();
+            });
+            // Enter submits the search by moving the user to the product collection.
+            [searchInput, mobileSearchInput].forEach(input => {
+                input.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Filter Range Listener
+            priceRange.addEventListener('input', (e) => {
+                priceVal.innerText = `PKR ${parseInt(e.target.value).toLocaleString()}`;
+                renderProducts();
+            });
+
+            // Reset Filters
+            document.getElementById('reset-filters-btn').addEventListener('click', () => {
+                document.querySelectorAll('.category-checkbox').forEach(cb => cb.checked = false);
+                priceRange.value = 25000;
+                priceVal.innerText = "PKR 25,000";
+                document.querySelector('input[name="gender"][value="all"]').checked = true;
+                inStockOnly.checked = false;
+                searchInput.value = '';
+                mobileSearchInput.value = '';
+                sortSelect.value = 'featured';
+                renderProducts();
+            });
+
+            // Sort Selector
+            sortSelect.addEventListener('change', renderProducts);
+
+            // Gender Radio Filter
+            document.querySelectorAll('input[name="gender"]').forEach(radio => {
+                radio.addEventListener('change', renderProducts);
+            });
+
+            // In Stock Filter
+            inStockOnly.addEventListener('change', renderProducts);
+
+            // Mobile Menu
+            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+                document.getElementById('mobile-drawer').classList.remove('hidden');
+            });
+            document.getElementById('close-mobile-menu').addEventListener('click', () => {
+                document.getElementById('mobile-drawer').classList.add('hidden');
+            });
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('mobile-drawer').classList.add('hidden');
+                });
+            });
+
+            // Cart Drawer
+            document.getElementById('cart-drawer-toggle').addEventListener('click', () => toggleCartDrawer(true));
+            document.getElementById('close-cart-btn').addEventListener('click', () => toggleCartDrawer(false));
+            document.getElementById('cart-backdrop').addEventListener('click', () => toggleCartDrawer(false));
+
+            // Quickview Modal Controls
+            document.getElementById('close-quickview').addEventListener('click', () => quickviewModal.classList.add('hidden'));
+            document.getElementById('qv-qty-minus').addEventListener('click', () => {
+                if (quickViewQty > 1) {
+                    quickViewQty--;
+                    document.getElementById('qv-qty-val').innerText = quickViewQty;
+                }
+            });
+            document.getElementById('qv-qty-plus').addEventListener('click', () => {
+                quickViewQty++;
+                document.getElementById('qv-qty-val').innerText = quickViewQty;
+            });
+            document.getElementById('qv-add-cart-btn').addEventListener('click', () => {
+                if (selectedQuickViewProduct) {
+                    addToCart(selectedQuickViewProduct, selectedQuickViewSize, selectedQuickViewColor, quickViewQty);
+                    quickviewModal.classList.add('hidden');
+                }
+            });
+
+            // Apply Promo Code
+            document.getElementById('apply-promo-btn').addEventListener('click', () => {
+                const code = document.getElementById('promo-code-input').value.trim().toUpperCase();
+                const msg = document.getElementById('promo-msg');
+                if (code === 'PK10') {
+                    activeDiscount = 10;
+                    msg.className = "text-[11px] text-emerald-400 font-semibold";
+                    msg.innerText = "Promo code PK10 applied! 10% discount unlocked.";
+                    msg.classList.remove('hidden');
+                    updateCartUI();
+                } else {
+                    msg.className = "text-[11px] text-red-400 font-semibold";
+                    msg.innerText = "Invalid promo code. Try using PK10";
+                    msg.classList.remove('hidden');
+                }
+            });
+
+            // Checkout Modal Trigger
+            document.getElementById('proceed-checkout-btn').addEventListener('click', () => {
+                if (cart.length === 0) {
+                    showToast("Please add items to your cart first!");
+                    return;
+                }
+                toggleCartDrawer(false);
+                checkoutModal.classList.remove('hidden');
+            });
+            document.getElementById('close-checkout').addEventListener('click', () => checkoutModal.classList.add('hidden'));
+
+            // Checkout Form Submission
+            document.getElementById('checkout-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Generate random Order ID
+                const randomId = `#SCP-${Math.floor(10000 + Math.random() * 90000)}`;
+                const selectedPayment = document.querySelector('input[name="payment"]:checked').value.toUpperCase();
+                
+                document.getElementById('receipt-order-id').innerText = randomId;
+                document.getElementById('receipt-payment').innerText = selectedPayment === 'COD' ? 'Cash on Delivery' : selectedPayment;
+                document.getElementById('receipt-total').innerText = document.getElementById('checkout-payable').innerText;
+
+                checkoutModal.classList.add('hidden');
+                confirmationModal.classList.remove('hidden');
+
+                // Clear Cart
+                cart = [];
+                activeDiscount = 0;
+                updateCartUI();
+            });
+
+            document.getElementById('close-confirmation').addEventListener('click', () => {
+                confirmationModal.classList.add('hidden');
+            });
+
+            // Newsletter Form
+            document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                showToast("Thank you for subscribing to SoleCraft Pakistan!");
+                e.target.reset();
+            });
+        }
+    </script>
+</body>
+</html>
